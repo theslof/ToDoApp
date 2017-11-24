@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+
+    <link rel="stylesheet" href="css/unsemantic-grid-responsive-tablet.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="grid-container">
+    <header><h1>ToDo</h1></header>
+    <section id="listContainer" class="grid-parent">
+        <!-- Show a list of lists on left side and items from selected list on right side.
+             Hide left side on mobile and show a drop-down menu instead?
+             index.html feels cluttered. -->
+        <article id="leftPanel" class="grid-20 tablet-grid-20 hide-on-mobile"></article>
+        <article id="rightPanel" class="grid-80 tablet-grid-80 mobile-grid-100"></article>
+
+        <article id="addNewList" class="grid-45 tablet-grid-45 mobile-grid-100" onclick="addListEvent()">
+            <img class="add" src="img/circle-with-plus.svg" alt="Add" />
+        </article>
+    </section>
+</div>
+<!--
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+        -->
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/read_json.js"></script>
+</body>
+</html>

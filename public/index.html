@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+
+    <link rel="stylesheet" href="css/unsemantic-grid-responsive-tablet.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="grid-container">
+    <header><h1>ToDo</h1></header>
+
+    <!--
+    Todo: Login, either by asking server or just checking hard-coded strings. Form.
+    Todo: Add item to list.
+    Todo: Delete item from list.
+    Todo: Edit item data.
+    Todo: Edit list header.
+    -->
+
+    <section id="listContainer" class="grid-parent">
+        <article id="addNewList" class="grid-45 tablet-grid-45 mobile-grid-100" onclick="addListEvent()">
+            <img class="add" src="img/circle-with-plus.svg" alt="Add" />
+        </article>
+    </section>
+</div>
+<!--
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+        -->
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/read_json.js"></script>
+</body>
+</html>
