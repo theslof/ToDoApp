@@ -82,6 +82,7 @@ div.spacing {
     border: 1px solid black;
     border-radius: 5px;
     background-color: #FFFFA5;
+    margin: 1em;
     margin-bottom: 2em;
 }
 
@@ -103,23 +104,25 @@ div.spacing {
     text-decoration: line-through;
 }
 
-article#addNewList{
+article#addNewList {
     border: 3px dashed #694129;
     border-radius: 10px;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     position: relative;
-    background-color: rgba(255,255,165,0.5);
+    background-color: rgba(255, 255, 165, 0.5);
+    margin: 1em;
 }
 
-article#addNewList:hover{
-    background-color: rgba(255,255,165,1);
+article#addNewList:hover {
+    background-color: rgba(255, 255, 165, 1);
 }
-article#addNewList:active{
+
+article#addNewList:active {
     background-color: #F0F0F0;
 }
 
-img.add{
+img.add {
     margin: auto;
     width: 4em;
     height: 4em;
@@ -130,13 +133,22 @@ img.add{
     right: 0;
 }
 
-img.remove{
+img.remove {
     width: 2em;
-    height:2em;
+    height: 2em;
     float: right;
     margin: 0;
     padding: 0;
     margin-top: 5px;
+}
+
+img.edit {
+    width: 1em;
+    height: 1em;
+}
+
+li.addNewItem {
+    list-style: none;
 }
 
 @media (max-width: 400px) {

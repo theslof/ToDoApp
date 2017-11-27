@@ -46,13 +46,21 @@ module.exports = {
             //PUT request for updating list
             var listId = req.body.listId;
             var listTitle = req.body.listTitle;
-            res.send('Update list ' + listId + ' with title ' + listTitle);
+            todo.updateListName(listId, listTitle, res);
         });
 
-        app.put('/item', function (req, res) {
+        app.put('/item/name', function (req, res) {
             //PUT request to update item text
             var itemId = req.body.itemId;
             var itemText = req.body.itemText;
+            todo.updateItemText(itemId, itemText, res);
+        });
+
+        app.put('/item/status', function (req, res) {
+            //PUT request to update item text
+            var itemId = req.body.itemId;
+            var statusName = req.body.statusName;
+            todo.updateItemStatus(itemId, statusName, res);
         });
 
         //Delete
