@@ -1,5 +1,9 @@
 $(function () {
 
+    if(!(localStorage.getItem('loggedIn') == 1) && !(sessionStorage.getItem('loggedIn') == 1)){
+        window.location.replace('/login.html');
+    }
+
     $.ajax({
         beforeSend: function (xhr) {
             if (xhr.overrideMimeType) {
@@ -60,11 +64,7 @@ function addItem(data, list) {
         .attr('id', 'item_' + data.itemId)
         .append(
             $(document.createElement('span'))
-                .text(data.itemText),
-            $(document.createElement('img'))
-                .addClass('edit')
-                .attr('src', 'img/cog.svg')
-                .attr('alt', 'Edit')
+                .text(data.itemText)
                 .click(function (event) {
                     var childNode = $(event.target).parent().next();
                     if (childNode.hasClass('config')) {
@@ -192,16 +192,7 @@ function addList(list) {
             .append(
                 $(document.createElement('h2'))
                     .addClass('listTitle')
-                    .text(list.listTitle),
-                $(document.createElement('img'))
-                    .addClass('remove')
-                    .attr('src', 'img/circle-with-cross.svg')
-                    .attr('alt', 'Remove')
-                    .click(removeList),
-                $(document.createElement('img'))
-                    .addClass('remove')
-                    .attr('src', 'img/cog.svg')
-                    .attr('alt', 'Edit')
+                    .text(list.listTitle)
                     .click(function () {
                         var newName = prompt('Enter a new list name:', article.children('h2').text());
                         $.ajax({
@@ -216,6 +207,11 @@ function addList(list) {
                             }
                         });
                     }),
+                $(document.createElement('img'))
+                    .addClass('remove')
+                    .attr('src', 'img/circle-with-cross.svg')
+                    .attr('alt', 'Remove')
+                    .click(removeList),
                 $(document.createElement('ul'))
                     .append($(document.createElement('a'))
                         .click(addNewItem)
@@ -310,4 +306,10 @@ function addNewItem(event) {
 
 function debugLog(string) {
     console.log(string);
+}
+
+function logOut() {
+    localStorage.setItem('loggedIn', 0);
+    sessionStorage.setItem('loggedIn', 0);
+    window.location.href = '/login.html';
 }

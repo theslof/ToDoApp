@@ -3,6 +3,11 @@ var todo = require('./api/todoapp');
 module.exports = {
     configure: function (app) {
 
+        //Login
+        app.post('/login', function (req, res) {
+            todo.verifyLogin(req.body, res);
+        });
+
         //CRUD
 
         //Create

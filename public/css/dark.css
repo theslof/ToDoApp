@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Arvo|Lato');
+
+body {
+    background-color: #694129;
+    color: #EFF1F1;
+}
+
+header {
+    border-color: #EFF1F1;
+}
+
+footer {
+    border-color: #EFF1F1;
+}
+
+fieldset.login {
+    background-color: #694129;
+    border: 1px groove #cccccc;
+}
+
+
+.grid-container {
+    background-color: #606060;
+}
+
+.todoList {
+    background-color: #AAAA35;
+}
+
+article#addNewList {
+    border: 3px dashed #EFF1F1;
+}
+
+article#addNewList:active {
+    background-color: #F0F0F0;
+}

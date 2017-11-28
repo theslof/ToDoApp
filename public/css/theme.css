@@ -7,11 +7,6 @@ body {
     background-color: #EFF1F1;
 }
 
-.grid-container {
-    background-color: white;
-    padding-bottom: 20px;
-}
-
 header {
     padding-bottom: 20px;
     margin-bottom: 20px;
@@ -78,6 +73,11 @@ div.spacing {
     height: 10px;
 }
 
+.grid-container {
+    background-color: white;
+    padding-bottom: 20px;
+}
+
 .todoList {
     border: 1px solid black;
     border-radius: 5px;
@@ -102,6 +102,24 @@ div.spacing {
 
 .strike {
     text-decoration: line-through;
+}
+
+p#theme {
+    font-size: 1em;
+    float: right;
+}
+
+p#response {
+
+}
+
+p.error {
+    color: red;
+    text-align: left;
+}
+
+input#logoutButton {
+    float: right;
 }
 
 article#addNewList {
@@ -145,6 +163,7 @@ img.remove {
 img.edit {
     width: 1em;
     height: 1em;
+    margin-left: 10px;
 }
 
 li.addNewItem {

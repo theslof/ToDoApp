@@ -2,6 +2,18 @@ var connection = require('../connection');
 var fs = require('fs');
 
 function ToDoApp() {
+    this.verifyLogin = function (body, res) {
+        //Hard-coded user credentials
+        var username = 'todoUser';
+        var password = 'todoPassword';
+
+        if (body.user == username && body.password == password){
+            res.send({status: 0, message: 'Login successful!'});
+        }else{
+            res.send({status: 1, message: 'Incorrect username or password!'});
+        }
+    };
+
     this.createList = function (body, res) {
         connection.acquire(function (err, con) {
             con.query('INSERT INTO todolists SET ?', body, function (err, result) {
