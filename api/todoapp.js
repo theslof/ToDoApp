@@ -7,9 +7,9 @@ function ToDoApp() {
         var username = 'todoUser';
         var password = 'todoPassword';
 
-        if (body.user == username && body.password == password){
+        if (body.user == username && body.password == password) {
             res.send({status: 0, message: 'Login successful!'});
-        }else{
+        } else {
             res.send({status: 1, message: 'Incorrect username or password!'});
         }
     };
@@ -106,7 +106,7 @@ function ToDoApp() {
                 } else {
                     res.send({
                         status: 0,
-                        message: 'Edited list name for ' + body.listId + ' to ' + body.listTitle
+                        message: 'Edited list name for ' + listId + ' to ' + listTitle
                     });
                 }
             });
@@ -153,14 +153,22 @@ function ToDoApp() {
     this.deleteList = function (id, res) {
         //DELETE request for list id
         connection.acquire(function (err, con) {
-            con.query('DELETE FROM todolists WHERE listId = ?', id, function (err, result) {
-                con.release();
+            con.query('DELETE FROM todoitems WHERE itemList = ?', id, function (err, result) {
                 if (err) {
+                    con.release();
                     console.log(err);
                     res.send({status: 1, message: 'DELETE failed'});
                 } else {
-                    console.log('DELETE success');
-                    res.send({status: 0, message: 'DELETE success'});
+                    con.query('DELETE FROM todolists WHERE listId = ?', id, function (err, result) {
+                        con.release();
+                        if (err) {
+                            console.log(err);
+                            res.send({status: 1, message: 'DELETE failed'});
+                        } else {
+                            console.log('DELETE success');
+                            res.send({status: 0, message: 'DELETE success'});
+                        }
+                    });
                 }
             });
         });

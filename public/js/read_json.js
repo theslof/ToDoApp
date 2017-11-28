@@ -53,6 +53,9 @@ function addItem(data, list) {
         return;
     }
 
+    if(data.itemText == '')
+        data.itemText = 'No Text';
+
     debugLog(JSON.stringify(data) + ', ' + list.attr('id'));
 
     var last_li = list.children('ul').children().last();
@@ -67,8 +70,9 @@ function addItem(data, list) {
                 .text(data.itemText)
                 .click(function (event) {
                     var childNode = $(event.target).parent().next();
-                    if (childNode.hasClass('config')) {
-                        childNode.remove();
+                    var hasConfig = childNode.hasClass('config');
+                    $('.config').remove();
+                    if (hasConfig) {
                         return;
                     }
                     var currentLi = $(event.target).parent();
@@ -182,6 +186,9 @@ function addList(list) {
         return;
     }
 
+    if(list.listTitle == '')
+        list.listTitle = 'No Title';
+
     var addButton = $('#addNewList');
     var article = $('#list_' + list.listId);
 
@@ -195,17 +202,19 @@ function addList(list) {
                     .text(list.listTitle)
                     .click(function () {
                         var newName = prompt('Enter a new list name:', article.children('h2').text());
-                        $.ajax({
-                            url: '/list',
-                            type: 'PUT',
-                            data: {listId: list.listId, listTitle: newName},
-                            success: function (data) {
-                                debugLog('Server responded: ' + data.message);
-                                if (data.status === 0) {
-                                    article.children('h2').text(newName);
+                        if(newName != null) {
+                            $.ajax({
+                                url: '/list',
+                                type: 'PUT',
+                                data: {listId: list.listId, listTitle: newName},
+                                success: function (data) {
+                                    debugLog('Server responded: ' + data.message);
+                                    if (data.status === 0) {
+                                        article.children('h2').text(newName);
+                                    }
                                 }
-                            }
-                        });
+                            });
+                        }
                     }),
                 $(document.createElement('img'))
                     .addClass('remove')
@@ -305,7 +314,7 @@ function addNewItem(event) {
 }
 
 function debugLog(string) {
-    console.log(string);
+//    console.log(string);
 }
 
 function logOut() {
