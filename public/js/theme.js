@@ -1,3 +1,5 @@
+// Add buttons for selecting theme.
+
 $(function () {
     var theme = localStorage.getItem('theme');
 

@@ -18,6 +18,13 @@ fieldset.login {
     border: 1px groove #cccccc;
 }
 
+article#addNewList {
+    border: 3px dashed #EFF1F1;
+}
+
+article#addNewList:active {
+    background-color: #F0F0F0;
+}
 
 .grid-container {
     background-color: #606060;
@@ -25,12 +32,4 @@ fieldset.login {
 
 .todoList {
     background-color: #AAAA35;
-}
-
-article#addNewList {
-    border: 3px dashed #EFF1F1;
-}
-
-article#addNewList:active {
-    background-color: #F0F0F0;
 }

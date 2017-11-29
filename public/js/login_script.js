@@ -26,7 +26,7 @@ loginForm.addEventListener('submit', function (e) {
     return false;
 }, false);
 
-
+// Run on page load. If user is logged in, redirect to index.html without saving login.html in history
 $(function () {
         if(localStorage.getItem('loggedIn') == 1 || sessionStorage.getItem('loggedIn') == 1){
             window.location.replace('/');

@@ -73,6 +73,76 @@ div.spacing {
     height: 10px;
 }
 
+img.add {
+    margin: auto;
+    width: 4em;
+    height: 4em;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+img.remove {
+    width: 2em;
+    height: 2em;
+    float: right;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+}
+
+img.edit {
+    width: 1em;
+    height: 1em;
+    margin-left: 10px;
+}
+
+li.addNewItem {
+    list-style: none;
+}
+
+li.config {
+    list-style: none;
+}
+
+p.error {
+    color: red;
+    text-align: left;
+}
+
+p#theme {
+    font-size: 1em;
+    float: right;
+}
+
+p#response {
+
+}
+
+input#logoutButton {
+    float: right;
+}
+
+article#addNewList {
+    border: 3px dashed #694129;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    background-color: rgba(255, 255, 165, 0.5);
+    margin: 1em;
+}
+
+article#addNewList:hover {
+    background-color: rgba(255, 255, 165, 1);
+}
+
+article#addNewList:active {
+    background-color: #F0F0F0;
+}
+
 .grid-container {
     background-color: white;
     padding-bottom: 20px;
@@ -104,74 +174,16 @@ div.spacing {
     text-decoration: line-through;
 }
 
-p#theme {
-    font-size: 1em;
-    float: right;
-}
+@media (max-width: 767px) {
+    article#addNewList {
+        width: 100%;
+        margin: 0;
+    }
 
-p#response {
-
-}
-
-p.error {
-    color: red;
-    text-align: left;
-}
-
-input#logoutButton {
-    float: right;
-}
-
-article#addNewList {
-    border: 3px dashed #694129;
-    border-radius: 10px;
-    width: 150px;
-    height: 150px;
-    position: relative;
-    background-color: rgba(255, 255, 165, 0.5);
-    margin: 1em;
-}
-
-article#addNewList:hover {
-    background-color: rgba(255, 255, 165, 1);
-}
-
-article#addNewList:active {
-    background-color: #F0F0F0;
-}
-
-img.add {
-    margin: auto;
-    width: 4em;
-    height: 4em;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-img.remove {
-    width: 2em;
-    height: 2em;
-    float: right;
-    margin: 0;
-    padding: 0;
-    margin-top: 5px;
-}
-
-img.edit {
-    width: 1em;
-    height: 1em;
-    margin-left: 10px;
-}
-
-li.addNewItem {
-    list-style: none;
-}
-
-@media (max-width: 400px) {
-
+    .todoList{
+        margin: 0;
+        margin-bottom: 1em;
+    }
 }
 
 /* Tablet */

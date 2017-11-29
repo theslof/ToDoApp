@@ -8,7 +8,8 @@ module.exports = {
             todo.verifyLogin(req.body, res);
         });
 
-        //CRUD
+
+        //--- CRUD ----
 
         //Create
         app.post('/list', function (req, res) {
